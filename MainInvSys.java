@@ -3,7 +3,7 @@ import java.util.Scanner;
 //this class is the main class of the program. it contains one main method, which is the menu interface
 //for the inventory function.
 
-public class Main{
+public class MainInvSys{
 
         //this method sets up an inventory interface. it is a loop that lets the user select from a menu,
         //and once the function requested is executed, the loop breaks and goes back to the menu.
