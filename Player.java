@@ -48,11 +48,11 @@ public class Player {
 		return currentHealth;
 	}
 	
-	public int getXcord {
+	public int getXcord() {
 		return xCord;
 	}
 
-	public int getYcord {
+	public int getYcord() {
 		return yCord;
 	}
 }
