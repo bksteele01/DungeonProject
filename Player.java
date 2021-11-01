@@ -48,13 +48,8 @@ public class Player {
 	public int getCurrentHealth() {
 		return currentHealth;
 	}
-<<<<<<< HEAD
 
-	public int getXcord {
-=======
-	
 	public int getXcord() {
->>>>>>> 01eb786b88ff275d7fa659eb874ccd55cc998f57
 		return xCord;
 	}
 
