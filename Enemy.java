@@ -59,7 +59,7 @@ class Enemy {
 	}
 
 	public void moveLocation(int newX, int newY) {
-		x = newX;
-		y = newY;
+		x = x + newX;
+		y = y + newY;
 	}
 }
