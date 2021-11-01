@@ -57,7 +57,7 @@ public class Player {
 		return yCord;
 	}
 
-	public int Battle(Enemy enemy) {
+	public void Battle(Enemy enemy) {
 		Item weapon = playerInv.getWeapon();
 		Item armor = playerInv.getArmor();
 		int playerStrength = weapon.getStrength();
@@ -69,7 +69,7 @@ public class Player {
 		} else {
 			enemyFinalDamage = (playerDefense - enemyInitDamage);
 		}
-		enemyNewHealth = enemy.getCurrHealth() - playerStrength;
+		int enemyNewHealth = enemy.getCurrHealth() - playerStrength;
 		enemy.setCurrent(enemyNewHealth);
 		currentHealth = currentHealth + enemyFinalDamage;
 		Terminal.warpCursor(7, 75);
@@ -77,6 +77,6 @@ public class Player {
 		System.out.print("The enemy has " + enemyNewHealth + "health left \n");
 		System.out.print("The enemy dealt " + enemyFinalDamage + " to you! \n");
 		System.out.print("You have " + currentHealth + "health left \n");
-
+	
 	}
 }
