@@ -21,6 +21,10 @@ class Item{
                 this.strength = strength;
         }
 
+	public int getStrength() {
+		return strength;
+	}
+
         public ItemType getType(){
 
                 //this method returns the instance variable type.

@@ -129,6 +129,13 @@ class Inventory{
                 System.out.println(equippedArmor + " has been equipped.");
 
         }
+	public Item getWeapon() {
+		return equippedWeapon;
+	}
+	public Item getArmor() {
+		return equippedArmor;
+	}
+
 }
 
 

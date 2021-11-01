@@ -36,8 +36,8 @@ public class Game {
 					break;
 					
 			}
-			if(enemymover%13 = 1)
-				enemy1.moveLocation(enemy1.getX()-1 > 		
+			if(enemymover%13 = 1){
+				enemy1.moveLocation(enemy1.getX()-1		
 			
 		}
 

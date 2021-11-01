@@ -1,4 +1,5 @@
 import java.util.*;
+import ansi_terminal.*;
 
 
 public class Player {
@@ -19,7 +20,7 @@ public class Player {
 		System.out.print("   "+name + "'s" + " current health is: " + currentHealth);
 
 	}
-		
+
 	public String getName() {
 		return name;
 	}
@@ -31,6 +32,7 @@ public class Player {
 	public void setName(String newName) {
 		name = newName;
 	}
+<<<<<<< HEAD
 /*
 	public Inventory setInv() {
 		return ;
@@ -42,6 +44,13 @@ public class Player {
 	public void setyCord(int y){
 		yCord = y;
 	}
+=======
+	/*
+	   public Inventory setInv() {
+	   return ;
+	   }
+	   */
+>>>>>>> 19790ed531d9a993ff160db3a055737809c35430
 	public void setMaxHealth(int newMax) {
 		maxHealth = newMax;
 	}
@@ -53,12 +62,39 @@ public class Player {
 	public int getCurrentHealth() {
 		return currentHealth;
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 19790ed531d9a993ff160db3a055737809c35430
 	public int getXcord() {
 		return xCord;
 	}
 
 	public int getYcord() {
 		return yCord;
+	}
+
+	public int Battle(Enemy enemy) {
+		Item weapon = playerInv.getWeapon();
+		Item armor = playerInv.getArmor();
+		int playerStrength = weapon.getStrength();
+		int playerDefense = armor.getStrength();
+		int enemyInitDamage = enemy.getDamage();
+		int enemyFinalDamage = 0;
+		if (playerDefense - enemyInitDamage > 0) {
+			enemyFinalDamage = 0;
+		} else {
+			enemyFinalDamage = (playerDefense - enemyInitDamage);
+		}
+		enemyNewHealth = enemy.getCurrHealth() - playerStrength;
+		enemy.setCurrent(enemyNewHealth);
+		currentHealth = currentHealth + enemyFinalDamage;
+		Terminal.warpCursor(7, 75);
+		System.out.print("You dealt " + playerStrength + " damage to the enemy! \n");
+		System.out.print("The enemy has " + enemyNewHealth + "health left \n");
+		System.out.print("The enemy dealt " + enemyFinalDamage + " to you! \n");
+		System.out.print("You have " + currentHealth + "health left \n");
+
 	}
 }
