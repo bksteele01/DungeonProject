@@ -7,15 +7,27 @@ class Enemy {
 	int maxHealth;
 	int currHealth;
 	int damage;
+	int x;
+	int y;
 
 
 
-	public enemy (int currHealth, int maxHealth, int damage, String name) {
+	public enemy (int currHealth, int maxHealth, int damage, String name, int x, int y) {
 		this.maxHealth = maxHealth;
 		this.damage = damage;
 		this.name = name;
 		this.currHealth = currHeatlh;
+		this.x = x;
+		this.y = y;
 
+	}
+
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
 	}
 
 	public String getName() {
@@ -46,4 +58,8 @@ class Enemy {
 		currHealth = newCurrHealth;
 	}
 
+	public void moveLocation(int newX, int newY) {
+		x = newX;
+		y = newY;
+	}
 }
