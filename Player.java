@@ -3,8 +3,9 @@ import java.util.*;
 
 public class Player {
 	private String name;
-	private Inventory playerInv;
+	private Inventory playerInv = new Inventory(15); //I don't know what weight is good for your inventory system, if 15 is too low/large feel free to change it
 	private int currentHealth;
+	private int maxHealth;
 
 	public Player(String name, int currentHealth) {
 		this.name = name;
@@ -23,23 +24,23 @@ public class Player {
 		return playerInv;
 	}
 
-	public String setName() {
-		return "";
+	public void setName(String newName) {
+		name = newName;
 	}
 /*
 	public Inventory setInv() {
 		return ;
 	}
 */
-	public int setMaxHealth() {
-		return 5;
+	public void setMaxHealth(int newMax) {
+		maxHealth = newMax;
 	}
 
-	public int setCurrentHealth() {
-		return 5;
+	public void setCurrentHealth(int newCurr) {
+		currentHealth = newCurr;
 	} 
 
-	public int getCurrentHealth(int damage) {
+	public int getCurrentHealth() {
 		return currentHealth;
 	}
 
