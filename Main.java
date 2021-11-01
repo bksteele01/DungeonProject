@@ -10,8 +10,7 @@ public class Main {
 		System.out.print("You then come to a complete stop as you meet a pile of sand in the middle of complete darkness.");
 		System.out.print("You feel nothing around you except for the ground you are on but in the far distance you see a faint glow of light");
 		System.out.print("You stand up and walk blindly towards the light still feeling nothing around you like you are in a black void");
-		System.out.print("Finally the closer you get to the light your surroundings start to appear and you see what looks to be an enterance way");
-		
+		System.out.print("Finally the closer you get to the light your surroundings start to appear and you see what looks to be an enterance way );
 		System.out.print("Looking in you see walls of brown sand and rock with something written on the wall..");
 		System.out.print("You read the wall and you spell it out the best you could 'sin..der..mag...ni' and then after a short pause your eyes grow wide");
 		System.out.print("Somehow you have managed to fall into the great pyramid of Sinder, the pharaoh of Eygpt 2755 BCE, one of the richest/brutalist ever known");
@@ -25,4 +24,7 @@ public class Main {
 */		Terminal.cookedMode();
 	}
 }
+
+// javac -cp ".:ansi_terminal.jar" *.java  To compile with terminal 
+// java -cp ".:ansi_terminal.jar" Main   To run with teminal 
 
