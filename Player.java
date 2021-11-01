@@ -36,6 +36,12 @@ public class Player {
 		return ;
 	}
 */
+	public void setxCord(int x){
+		xCord = x;
+	}
+	public void setyCord(int y){
+		yCord = y;
+	}
 	public void setMaxHealth(int newMax) {
 		maxHealth = newMax;
 	}
@@ -48,11 +54,11 @@ public class Player {
 		return currentHealth;
 	}
 	
-	public int getXcord {
+	public int getXcord() {
 		return xCord;
 	}
 
-	public int getYcord {
+	public int getYcord() {
 		return yCord;
 	}
 }
