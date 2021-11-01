@@ -12,11 +12,11 @@ class Enemy {
 
 
 
-	public enemy (int currHealth, int maxHealth, int damage, String name, int x, int y) {
+	public Enemy (int currHealth, int maxHealth, int damage, String name, int x, int y) {
 		this.maxHealth = maxHealth;
 		this.damage = damage;
 		this.name = name;
-		this.currHealth = currHeatlh;
+		this.currHealth = currHealth;
 		this.x = x;
 		this.y = y;
 
