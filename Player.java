@@ -10,8 +10,8 @@ public class Player {
 		this.name = name;
 		this.playerInv = playerInv;
 		this.currentHealth = currentHealth;
-		System.out.println("Future grave resident: " + name);		
-		System.out.println(name + "'s" + " current health is: " + currentHealth);
+		System.out.print("Future grave resident: " + name);		
+		System.out.print("   "+name + "'s" + " current health is: " + currentHealth);
 
 	}
 		
