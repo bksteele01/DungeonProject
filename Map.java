@@ -127,6 +127,8 @@ public class Map{
 		System.out.print("equip weapon: W");
 		Terminal.warpCursor(8, 75);
 		System.out.print("equip armor: A");
+		Terminal.warpCursor(9, 75);
+		System.out.println("Player: &");
 		Terminal.warpCursor(40, 0);
                 Terminal.reset();
 		
