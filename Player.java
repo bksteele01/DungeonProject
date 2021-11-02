@@ -11,13 +11,16 @@ public class Player {
 	private int yCord;
 
 	public Player(String name, int currentHealth) {
+		System.out.print("\n \r");
 		xCord = 4;
 		yCord = 4;
 		this.name = name;
 		this.playerInv = playerInv;
 		this.currentHealth = currentHealth;
-		System.out.print("Future grave resident: " + name);		
-		System.out.print("   "+name + "'s" + " current health is: " + currentHealth);
+		System.out.print("\n \r");
+		System.out.print("Player: " + name);		
+		System.out.print("\n \r");
+		System.out.print(name + "'s" + " current health is: " + currentHealth +  "\n \r" );
 
 	}
 
@@ -94,6 +97,6 @@ public class Player {
 		System.out.print("The enemy has " + enemyNewHealth + "health left \n");
 		System.out.print("The enemy dealt " + enemyFinalDamage + " to you! \n");
 		System.out.print("You have " + currentHealth + "health left \n");
-
+	
 	}
 }
