@@ -46,19 +46,35 @@ public class Game {
 				case ESCAPE:
 					done = true;
 				case LEFT:
-					player.setxCord(player.getXcord() - 1);
-					break;
+					if(Map.grid[player.getYcord()].charAt(player.getXcord()-1) == '#'){
+						break;
+					}else{
+						player.setxCord(player.getXcord() - 1);
+						break;
+					}
 				case RIGHT:
-					player.setxCord(player.getXcord() + 1);
-					break;
+					if(Map.grid[player.getYcord()].charAt(player.getXcord()+1) == '#'){
+                                                break;
+                                        }else{
+                                                player.setxCord(player.getXcord() + 1);
+                                                break;
+                                        }
 				case UP:
-					player.setyCord(player.getYcord() - 1);
-					break;
+					if(Map.grid[player.getYcord()-1].charAt(player.getXcord()) == '#'){
+                                                break;
+                                        }else{
+                                                player.setyCord(player.getYcord() - 1);
+                                                break;
+                                        }
 				case DOWN:
-					player.setyCord(player.getYcord() + 1);
-					break;	
+					if(Map.grid[player.getYcord()+1].charAt(player.getXcord()) == '#'){
+                                                break;
+                                        }else{
+                                                player.setyCord(player.getYcord() + 1);
+
+                                                break;
+                                        }
 				case P:
-					
 					break;
 					
 			}

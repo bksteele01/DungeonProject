@@ -1,6 +1,6 @@
 import ansi_terminal.*;
 public class Map{
-        private static String[] grid = {
+        public static String[] grid = {
                 "############                              ############################",
                 "#          #                              #                   ########",
                 "#          #                           ####                   #       ",
