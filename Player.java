@@ -11,6 +11,7 @@ public class Player {
 	private int yCord;
 	ItemType weapon = ItemType.weapon;
 	Item IronSword = new Item(weapon, "Iron Sword", 8, 50, 10);
+	ItemType armor = ItemType.armor;
 	Item woodenChestplate = new Item(armor, "Wooden Chestplate", 5, 60, 10);
 	public Player(String name, int currentHealth) {
 		System.out.print("\n \r");
