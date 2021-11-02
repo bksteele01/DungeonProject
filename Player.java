@@ -11,12 +11,14 @@ public class Player {
 	private int yCord;
 	ItemType weapon = ItemType.weapon;
 	Item IronSword = new Item(weapon, "Iron Sword", 8, 50, 10);
+	Item woodenChestplate = new Item(armor, "Wooden Chestplate", 5, 60, 10);
 	public Player(String name, int currentHealth) {
 		System.out.print("\n \r");
 		xCord = 4;
 		yCord = 4;
 		this.name = name;
 		this.playerInv = playerInv;
+		playerInv.add(woodenChestplate);
 		playerInv.add(IronSword);
 		this.currentHealth = currentHealth;
 		System.out.print("\n \r");
@@ -68,8 +70,6 @@ public class Player {
 		return currentHealth;
 	}
 
-	
-
 
 	public int getXcord() {
 		return xCord;
@@ -78,6 +78,7 @@ public class Player {
 	public int getYcord() {
 		return yCord;
 	}
+
 
 	public void Battle(Enemy enemy) {
 		Item weapon = playerInv.getWeapon();
