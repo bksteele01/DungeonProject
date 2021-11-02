@@ -4,18 +4,20 @@ import ansi_terminal.*;
 
 public class Player {
 	private String name;
-	private Inventory playerInv = new Inventory(15); //I don't know what weight is good for your inventory system, if 15 is too low/large feel free to change it
+	private Inventory playerInv = new Inventory(100); //I don't know what weight is good for your inventory system, if 15 is too low/large feel free to change it
 	private int currentHealth;
 	private int maxHealth;
 	private int xCord;
 	private int yCord;
-
+	ItemType weapon = ItemType.weapon;
+	Item IronSword = new Item(weapon, "Iron Sword", 8, 50, 10);
 	public Player(String name, int currentHealth) {
 		System.out.print("\n \r");
 		xCord = 4;
 		yCord = 4;
 		this.name = name;
 		this.playerInv = playerInv;
+		playerInv.add(IronSword);
 		this.currentHealth = currentHealth;
 		System.out.print("\n \r");
 		System.out.print("Player: " + name);		

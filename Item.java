@@ -8,12 +8,13 @@ class Item{
         private int weight;
         private int value;
         private int strength;
+	private boolean pickedUp;
 
         Item(ItemType type, String name, int weight, int value, int strength){
 
                 //this is a constructor for an item object. it takes all the parameters and sets them equal
                 //to the instance variables of the object.
-
+		pickedUp = false;
                 this.type = type;
                 this.name = name;
                 this.weight = weight;

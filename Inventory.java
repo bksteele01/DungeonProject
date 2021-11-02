@@ -1,5 +1,6 @@
 import  java.util.ArrayList;
 import java.util.Scanner;
+import ansi_terminal.*;
 
 class Inventory{
 
@@ -53,7 +54,8 @@ class Inventory{
 
                 for(int a = 0; a < items.size();a++){
                         Item currentItem = items.get(a);
-                        System.out.println(currentItem.toString());
+                        Terminal.warpCursor(10+a, 72);
+			System.out.print(currentItem);
                 }
         }
 

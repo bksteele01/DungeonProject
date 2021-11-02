@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import ansi_terminal.*;
+import java.lang.String;
 public class Game {
 
 	public static void game() {
@@ -7,6 +8,8 @@ public class Game {
 		System.out.print("What is your name?");
 		String name = input.next();
 		Player player = new Player(name,100);
+		Inventory playerInv = player.getInv();
+
 		Enemy enemy1 = new Enemy(100, 100, 25, name, 18, 18);
 		Enemy enemy2 = new Enemy(100, 100, 25, name, 55, 9); 
 		boolean done = false;
@@ -75,7 +78,37 @@ public class Game {
                                                 break;
                                         }
 				case P:
+					if(player.getYcord() == 16 && player.getXcord() == 32){
+						ItemType armor = ItemType.armor;
+						Item helmet = new Item(armor, "Helmet", 5, 50, 10);
+						playerInv.add(helmet); 
+						Map.grid[16] = Map.grid[16].replace("h", " ");
+					}
+					if(player.getYcord() == 32 && player.getXcord() == 13){
+                                                ItemType weapon = ItemType.weapon;
+                                                Item ironsword = new Item(weapon, "Iron Sword", 8, 50, 15);
+                                                playerInv.add(ironsword);
+                                                Map.grid[32] = Map.grid[32].replace("s", " ");
+                                        }
+					if(player.getYcord() == 7 && player.getXcord() == 56){
+                                                ItemType weapon = ItemType.weapon;
+                                                Item bow = new Item(weapon, "Bow/Quiver", 3, 45, 12);
+                                                playerInv.add(bow);
+                                                Map.grid[7] = Map.grid[7].replace("b", " ");
+                                        }
+					if(player.getYcord() == 35 && player.getXcord() == 59){
+                                                ItemType armor = ItemType.armor;
+                                                Item chestplate = new Item(armor, "Bronze Chestplate", 10, 70, 15);
+                                                playerInv.add(chestplate);
+                                                Map.grid[35] = Map.grid[35].replace("c", " ");
+                                        }
+
 					break;
+				case Q:;
+					playerInv.print();
+					Terminal.pause(4);
+					break;
+				
 					
 			}
 		}
