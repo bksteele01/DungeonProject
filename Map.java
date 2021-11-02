@@ -43,11 +43,11 @@ public class Map{
                 "   ###################################################################"
 		};	
 
-	public static void displayMap(int row, int column){
+	public static void displayMap(int row, int column, int rowe, int columne, int rowe2, int columne2){
                 Terminal.clear();
                 for(int looprow = 0;looprow < 40;looprow++){
                         for(int loopcolumn = 0;loopcolumn < 70;loopcolumn++){
-                                if(looprow == row && loopcolumn == column){
+                                if(looprow == row && loopcolumn == column || looprow == rowe && loopcolumn == columne || looprow == rowe2 && loopcolumn == columne2){
                                         Terminal.setForeground(Color.RED);
                                         System.out.print("&");
                                         Terminal.reset();
@@ -80,6 +80,4 @@ public class Map{
                 Terminal.warpCursor(40, 0);
                 Terminal.reset();
 }
-}
-
-
+}   

@@ -32,7 +32,7 @@ public class Player {
 	public void setName(String newName) {
 		name = newName;
 	}
-<<<<<<< HEAD
+
 /*
 	public Inventory setInv() {
 		return ;
@@ -44,13 +44,13 @@ public class Player {
 	public void setyCord(int y){
 		yCord = y;
 	}
-=======
+
 	/*
 	   public Inventory setInv() {
 	   return ;
 	   }
 	   */
->>>>>>> 19790ed531d9a993ff160db3a055737809c35430
+
 	public void setMaxHealth(int newMax) {
 		maxHealth = newMax;
 	}
@@ -62,11 +62,10 @@ public class Player {
 	public int getCurrentHealth() {
 		return currentHealth;
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 19790ed531d9a993ff160db3a055737809c35430
+	
+
+
 	public int getXcord() {
 		return xCord;
 	}
@@ -75,7 +74,7 @@ public class Player {
 		return yCord;
 	}
 
-	public int Battle(Enemy enemy) {
+	public void Battle(Enemy enemy) {
 		Item weapon = playerInv.getWeapon();
 		Item armor = playerInv.getArmor();
 		int playerStrength = weapon.getStrength();
@@ -87,7 +86,7 @@ public class Player {
 		} else {
 			enemyFinalDamage = (playerDefense - enemyInitDamage);
 		}
-		enemyNewHealth = enemy.getCurrHealth() - playerStrength;
+		int enemyNewHealth = enemy.getCurrHealth() - playerStrength;
 		enemy.setCurrent(enemyNewHealth);
 		currentHealth = currentHealth + enemyFinalDamage;
 		Terminal.warpCursor(7, 75);
