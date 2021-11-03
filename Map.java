@@ -118,9 +118,9 @@ public class Map{
                 Terminal.warpCursor(3, 75);
                 System.out.print("movement: arrowkeys");
                 Terminal.warpCursor(4, 75);
-                System.out.print("pickup object: P");
+                System.out.print("pickup object: p");
                 Terminal.warpCursor(5, 75);
-		System.out.print("print inventory: Q");
+		System.out.print("print inventory: q");
 		Terminal.warpCursor(6, 75);
 		System.out.print("drop item: D");
 		Terminal.warpCursor(7, 75);
@@ -129,6 +129,8 @@ public class Map{
 		System.out.print("equip armor: A");
 		Terminal.warpCursor(9, 75);
 		System.out.println("Player: &");
+		Termina.warpCursor(10, 75);
+		System.out.println("End game: esc);
 		Terminal.warpCursor(40, 0);
                 Terminal.reset();
 		
