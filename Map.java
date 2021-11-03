@@ -118,9 +118,9 @@ public class Map{
                 Terminal.warpCursor(3, 75);
                 System.out.print("movement: arrowkeys");
                 Terminal.warpCursor(4, 75);
-                System.out.print("pickup object: p");
+                System.out.print("pickup object: P");
                 Terminal.warpCursor(5, 75);
-		System.out.print("print inventory: q");
+		System.out.print("print inventory: Q");
 		Terminal.warpCursor(6, 75);
 		System.out.print("drop item: D");
 		Terminal.warpCursor(7, 75);

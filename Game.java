@@ -104,10 +104,18 @@ public class Game {
                                         }
 
 					break;
-				case q:;
+				case q:
 					playerInv.print();
 					Terminal.pause(4);
 					break;
+				case w:
+					playerInv.equipWeapon();
+					break;
+				case a:
+					playerInv.equipArmor();
+					break;
+
+
 				
 					
 			}
