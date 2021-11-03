@@ -77,7 +77,7 @@ public class Game {
 
                                                 break;
                                         }
-				case P:
+				case p:
 					if(player.getYcord() == 16 && player.getXcord() == 32){
 						ItemType armor = ItemType.armor;
 						Item helmet = new Item(armor, "Helmet", 5, 50, 10);
@@ -104,7 +104,7 @@ public class Game {
                                         }
 
 					break;
-				case Q:;
+				case q:;
 					playerInv.print();
 					Terminal.pause(4);
 					break;
