@@ -71,7 +71,7 @@ public class Player {
 	}
 
 
-	public void Battle(Enemy enemy) {
+	public boolean Battle(Enemy enemy) {
 		Item weapon = playerInv.getWeapon();
 		Item armor = playerInv.getArmor();
 		int playerStrength = weapon.getStrength();
@@ -91,6 +91,11 @@ public class Player {
 		System.out.print("The enemy has " + enemyNewHealth + "health left \n");
 		System.out.print("The enemy dealt " + enemyFinalDamage + " to you! \n");
 		System.out.print("You have " + currentHealth + "health left \n");
-	
+		if (enemy.getCurrHealth() == 0) {
+			System.out.print("Enemy is dead");
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
