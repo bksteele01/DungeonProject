@@ -128,9 +128,9 @@ public class Map{
 		Terminal.warpCursor(8, 75);
 		System.out.print("equip armor: A");
 		Terminal.warpCursor(9, 75);
-		System.out.println("Player: &");
-		Termina.warpCursor(10, 75);
-		System.out.println("End game: esc);
+		System.out.print("Player: &");
+		Terminal.warpCursor(10, 75);
+		System.out.print("End game: esc");
 		Terminal.warpCursor(40, 0);
                 Terminal.reset();
 		
