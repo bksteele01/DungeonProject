@@ -41,23 +41,12 @@ public class Player {
 		name = newName;
 	}
 
-/*
-	public Inventory setInv() {
-		return ;
-	}
-*/
 	public void setxCord(int x){
 		xCord = x;
 	}
 	public void setyCord(int y){
 		yCord = y;
 	}
-
-	/*
-	   public Inventory setInv() {
-	   return ;
-	   }
-	   */
 
 	public void setMaxHealth(int newMax) {
 		maxHealth = newMax;
