@@ -73,6 +73,7 @@ public class Player {
 
 	public int getXcord() {
 		return xCord;
+
 	}
 
 	public int getYcord() {
