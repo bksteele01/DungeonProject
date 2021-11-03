@@ -16,6 +16,9 @@ public class Game {
 		int enemymover = 0;
 
 		while(!done){
+			if(player.getCurrentHealth() < 1){
+				done = true;
+			}
 			if(12 < enemymover && enemymover < 17){
                                 enemy1.moveLocation(enemy1.getX(), enemy1.getY()+1);
 				enemy2.moveLocation(enemy2.getX(), enemy2.getY()+1);
