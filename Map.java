@@ -56,12 +56,12 @@ public class Map{
                  }
 		if(grid[row].charAt(column) == 'c'){
                         Terminal.warpCursor(10,75);
-                        System.out.print("c");
+                        System.out.print("Bronze Chestplate: 10, 70, 15");
                         Terminal.pause(1);
                  }
 		if(grid[row].charAt(column) == 'b'){
                         Terminal.warpCursor(10,75);
-                        System.out.print("b");
+                        System.out.print("Bow/Quiver: 3, 45, 15");
                         Terminal.pause(1);
                  }
 		Terminal.clear();
