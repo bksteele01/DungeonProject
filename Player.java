@@ -86,12 +86,12 @@ public class Player {
 		int enemyNewHealth = enemy.getCurrHealth() - playerStrength;
 		enemy.setCurrent(enemyNewHealth);
 		currentHealth = currentHealth + enemyFinalDamage;
-		Terminal.warpCursor(7, 75);
+		Terminal.warpCursor(20, 75);
 		System.out.print("You dealt " + playerStrength + " damage to the enemy! \n");
 		System.out.print("The enemy has " + enemyNewHealth + "health left \n");
 		System.out.print("The enemy dealt " + enemyFinalDamage + " to you! \n");
 		System.out.print("You have " + currentHealth + "health left \n");
-		if (enemy.getCurrHealth() == 0) {
+		if (enemy.getCurrHealth() <= 0) {
 			System.out.print("Enemy is dead");
 			return true;
 		} else {

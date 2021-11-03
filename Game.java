@@ -9,6 +9,8 @@ public class Game {
 		String name = input.next();
 		Player player = new Player(name,100);
 		Inventory playerInv = player.getInv();
+		playerInv.equipWeapon();
+		playerInv.equipArmor();
 
 		Enemy enemy1 = new Enemy(100, 100, 25, name, 18, 18);
 		Enemy enemy2 = new Enemy(100, 100, 25, name, 55, 9); 
