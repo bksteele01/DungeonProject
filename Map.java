@@ -46,7 +46,7 @@ public class Map{
 	public static void displayMap(int row, int column, int rowe, int columne, int rowe2, int columne2){
                 if(grid[row].charAt(column) == 'h'){
                         Terminal.warpCursor(10,75);
-                        System.out.print("h");
+                        System.out.print("Helmet");
                         Terminal.pause(1);
                 }
 		if(grid[row].charAt(column) == 's'){
