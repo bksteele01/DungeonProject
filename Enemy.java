@@ -9,6 +9,7 @@ class Enemy {
 	int damage;
 	int x;
 	int y;
+	boolean isDead;
 
 
 
@@ -19,6 +20,7 @@ class Enemy {
 		this.currHealth = currHealth;
 		this.x = x;
 		this.y = y;
+		isDead = false;
 
 	}
 
@@ -61,5 +63,8 @@ class Enemy {
 	public void moveLocation(int newX, int newY) {
 		x = newX;
 		y = newY;
+	}
+	public boolean getIsDead(){
+		return isDead;
 	}
 }
