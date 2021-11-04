@@ -12,7 +12,7 @@ public class Game {
 		playerInv.equipWeapon();
 		playerInv.equipArmor();
 		Enemy enemy1 = new Enemy(10, 10, 10, name, 18, 18);
-		Enemy enemy2 = new Enemy(100, 100, 10, name, 55, 9); 
+		Enemy enemy2 = new Enemy(10, 10, 10, name, 55, 9); 
 		boolean done = false;
 		int enemymover = 0;
 
@@ -48,14 +48,14 @@ public class Game {
 			if(player.getXcord() == enemy1.getX() && player.getYcord() == enemy1.getY()) {
                                 boolean isDead = player.Battle(enemy1);
                                 if (isDead) {
-                                      	enemymover = 1000000;
-					enemy1.moveLocation(0, 15);
+                                      	
+					enemy1.moveLocation(-15, 15);
                                 }
                         }
                         if(player.getXcord() == enemy2.getX() && player.getYcord() == enemy2.getY()) {
                                 boolean isDead = player.Battle(enemy2);
                                 if (isDead) {
-                                        Map.grid[enemy2.getY()] = Map.grid[enemy2.getY()].replace("&", " ");
+                                        enemy2.moveLocation(-15,16);
                                 }
                         }
 
