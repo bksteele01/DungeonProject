@@ -11,8 +11,8 @@ public class Game {
 		Inventory playerInv = player.getInv();
 		playerInv.equipWeapon();
 		playerInv.equipArmor();
-		Enemy enemy1 = new Enemy(10, 10, 10, name, 18, 18);
-		Enemy enemy2 = new Enemy(10, 10, 10, name, 55, 9); 
+		Enemy enemy1 = new Enemy(20, 20, 20, name, 18, 18);
+		Enemy enemy2 = new Enemy(20, 20, 20, name, 55, 9); 
 		boolean done = false;
 		int enemymover = 0;
 
