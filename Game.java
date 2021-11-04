@@ -1,21 +1,29 @@
 import java.util.Scanner;
 import ansi_terminal.*;
 import java.lang.String;
+//This class executes the actual game mechanics. It uses a loop and manipulates elements
+//of each object depending on user input. 
+
 public class Game {
+	//Singular method of the class. Easier to have it away from the main class for
+	//terminal reasons. Does what was described in the class description. 
 
 	public static void game() {
+		
 		Scanner input = new Scanner(System.in);
 		System.out.print("What is your name?");
 		String name = input.next();
+		
 		Player player = new Player(name,100);
 		Inventory playerInv = player.getInv();
 		playerInv.equipWeapon();
 		playerInv.equipArmor();
-		Enemy enemy1 = new Enemy(20, 20, 20, name, 18, 18);
-		Enemy enemy2 = new Enemy(20, 20, 20, name, 55, 9); 
+		
+		Enemy enemy1 = new Enemy(100, 100, 20, name, 18, 18);
+		Enemy enemy2 = new Enemy(100, 100, 20, name, 55, 9); 
+		
 		boolean done = false;
 		int enemymover = 0;
-
 		while(!done){
 			if(enemy1.getIsDead() == true && enemy2.getIsDead() == true) {
 				Terminal.warpCursor(20,75);
@@ -24,8 +32,13 @@ public class Game {
 				done = true; 
 			}
 			if(player.getCurrentHealth() < 1){
+				Terminal.warpCursor(20,75);
+				System.out.print("YOU DIED!");
+				Terminal.pause(3);
 				done = true;
-			}
+			}	
+			
+			
 			if(12 < enemymover && enemymover < 17){
 				enemy1.moveLocation(enemy1.getX(), enemy1.getY()+1);
 				enemy2.moveLocation(enemy2.getX(), enemy2.getY()+1);
@@ -51,6 +64,8 @@ public class Game {
 				enemy2.moveLocation(enemy2.getX()-1, enemy2.getY());				
 				enemymover = enemymover+1;
 			}
+			
+			
 			if(player.getXcord() == enemy1.getX() && player.getYcord() == enemy1.getY()) {
 				boolean isDead = player.Battle(enemy1);
 				if (isDead) {
@@ -66,9 +81,11 @@ public class Game {
 				}
 			}		
 
+			
 			Map.displayMap(player.getYcord(), player.getXcord(), enemy1.getY(), enemy1.getX(), enemy2.getY(), enemy2.getX());
 			Map.displayInfo();
 			Key key = Terminal.getKey();
+			
 			switch(key){
 				case ESCAPE:
 					done = true;
@@ -110,8 +127,8 @@ public class Game {
 					}
 					if(player.getYcord() == 32 && player.getXcord() == 13){
 						ItemType weapon = ItemType.weapon;
-						Item ironsword = new Item(weapon, "Iron Sword", 8, 50, 15);
-						playerInv.add(ironsword);
+						Item goldsword = new Item(weapon, "Gold Sword", 8, 50, 15);
+						playerInv.add(goldsword);
 						Map.grid[32] = Map.grid[32].replace("s", " ");
 					}
 					if(player.getYcord() == 7 && player.getXcord() == 56){
@@ -126,7 +143,6 @@ public class Game {
 						playerInv.add(chestplate);
 						Map.grid[35] = Map.grid[35].replace("c", " ");
 					}
-
 					break;
 				case q:
 					playerInv.print();
@@ -138,10 +154,6 @@ public class Game {
 				case a:
 					playerInv.equipArmor();
 					break;
-
-
-
-
 			}
 		}
 	}
