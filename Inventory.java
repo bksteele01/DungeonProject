@@ -88,23 +88,24 @@ class Inventory{
                 //like to equip, and sets the selection equal to the equip instance variable.
 
                 for(int c = 0; c < items.size();c++){
-                        Item currentItem = items.get(c);
+                        Terminal.warpCursor(13+c,75);
+			Terminal.setForeground(Color.RED);
+			Item currentItem = items.get(c);
                         ItemType weapon = ItemType.weapon;
                         if(currentItem.getType() == weapon){
-                                System.out.println(c+1);
-                                System.out.println(currentItem.toString());
+                                System.out.print(c+1);
+                                System.out.print(currentItem.toString());
                         }
 
                 }
-                System.out.println("Which weapon would you like to equip?");
+                System.out.print("Which weapon would you like to equip?");
                 Scanner weaponequ = new Scanner(System.in);
                 int equAnswer = weaponequ.nextInt();
 
                 Item myWeapon = items.get(equAnswer-1);
                 equippedWeapon = myWeapon;
-                System.out.println();
-                System.out.println();
-                System.out.println(equippedWeapon + " has been equipped.");
+               
+                System.out.print(equippedWeapon + " has been equipped.");
         }
 	void equipArmor(){
 
@@ -113,22 +114,22 @@ class Inventory{
                 //like to equip, and sets the selection equal to the equip instance variable.
 
                 for(int d = 0; d < items.size();d++){
-                        Item currentItem = items.get(d);
+                        Terminal.warpCursor(20,75);
+			Terminal.setForeground(Color.RED);
+			Item currentItem = items.get(d);
                         ItemType armor = ItemType.armor;
                         if(currentItem.getType() == armor){
-                                System.out.println(d+1);
-                                System.out.println(currentItem.toString());
+                                System.out.print(d+1);
+                                System.out.print(currentItem.toString());
                         }
                 }
-                System.out.println("Which armor would you like to equip?");
+                System.out.print("Which armor would you like to equip?");
                 Scanner armorequ = new Scanner(System.in);
                 int equAnswer = armorequ.nextInt();
 
                 Item myArmor = items.get(equAnswer-1);
                 equippedArmor = myArmor;
-                System.out.println();
-                System.out.println();
-                System.out.println(equippedArmor + " has been equipped.");
+                System.out.print(equippedArmor + " has been equipped.");
 
         }
 	public Item getWeapon() {

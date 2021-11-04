@@ -75,7 +75,7 @@ public class Player {
 		Item weapon = playerInv.getWeapon();
 		Item armor = playerInv.getArmor();
 		int playerStrength = weapon.getStrength();
-		int playerDefense = armor.getStrength();
+		int playerDefense = armor.getStrength();	
 		int enemyInitDamage = enemy.getDamage();
 		int enemyFinalDamage = 0;
 		if (playerDefense - enemyInitDamage > 0) {
@@ -88,9 +88,13 @@ public class Player {
 		currentHealth = currentHealth + enemyFinalDamage;
 		Terminal.warpCursor(20, 75);
 		System.out.print("You dealt " + playerStrength + " damage to the enemy! \n");
+		Terminal.warpCursor(21,75);
 		System.out.print("The enemy has " + enemyNewHealth + "health left \n");
+		Terminal.warpCursor(22, 75);
 		System.out.print("The enemy dealt " + enemyFinalDamage + " to you! \n");
+		Terminal.warpCursor(23, 75);
 		System.out.print("You have " + currentHealth + "health left \n");
+		Terminal.pause(5);
 		if (enemy.getCurrHealth() <= 0) {
 			System.out.print("Enemy is dead");
 			return true;

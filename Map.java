@@ -46,11 +46,10 @@ public class Map{
 	public static void displayMap(int row, int column, int rowe, int columne, int rowe2, int columne2){
                 if(grid[row].charAt(column) == 'h'){
                         Terminal.warpCursor(10,75);
-<<<<<<< HEAD
                         System.out.print("Helmet");
-=======
+
                         System.out.print("Helmet: 5, 50, 10");
->>>>>>> 3162a77ff12e8cb1b09c70b5fb47d76e90e2991d
+
                         Terminal.pause(1);
                 }
 		if(grid[row].charAt(column) == 's'){

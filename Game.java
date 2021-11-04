@@ -11,7 +11,6 @@ public class Game {
 		Inventory playerInv = player.getInv();
 		playerInv.equipWeapon();
 		playerInv.equipArmor();
-
 		Enemy enemy1 = new Enemy(100, 100, 25, name, 18, 18);
 		Enemy enemy2 = new Enemy(100, 100, 25, name, 55, 9); 
 		boolean done = false;
@@ -47,17 +46,18 @@ public class Game {
                                 enemymover = enemymover+1;
                         }
 			if(player.getXcord() == enemy1.getX() && player.getYcord() == enemy1.getY()) {
-				boolean isDead = player.Battle(enemy1);
-				if (isDead) {
-					Map.grid[enemy1.getX()] = Map.grid[enemy1.getX()].replace("&", " ");
-				}
-			}
-			if(player.getXcord() == enemy2.getX() && player.getYcord() == enemy2.getY()) {
-				boolean isDead = player.Battle(enemy2);
-				if (isDead) {
-					Map.grid[enemy2.getX()] = Map.grid[enemy2.getX()].replace("&", " ");
-				}
-			}
+                                boolean isDead = player.Battle(enemy1);
+                                if (isDead) {
+                                        Map.grid[enemy1.getX()] = Map.grid[enemy1.getX()].replace("&", " ");
+                                }
+                        }
+                        if(player.getXcord() == enemy2.getX() && player.getYcord() == enemy2.getY()) {
+                                boolean isDead = player.Battle(enemy2);
+                                if (isDead) {
+                                        Map.grid[enemy2.getX()] = Map.grid[enemy2.getX()].replace("&", " ");
+                                }
+                        }
+
 			Map.displayMap(player.getYcord(), player.getXcord(), enemy1.getY(), enemy1.getX(), enemy2.getY(), enemy2.getX());
                         Map.displayInfo();
 			Key key = Terminal.getKey();
