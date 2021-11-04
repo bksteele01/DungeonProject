@@ -94,9 +94,10 @@ public class Player {
 		System.out.print("The enemy dealt " + enemyFinalDamage + " to you! \n");
 		Terminal.warpCursor(23, 75);
 		System.out.print("You have " + currentHealth + "health left \n");
-		Terminal.pause(5);
+		Terminal.pause(2);
 		if (enemy.getCurrHealth() <= 0) {
 			System.out.print("Enemy is dead");
+			Terminal.pause(2);
 			return true;
 		} else {
 			return false;

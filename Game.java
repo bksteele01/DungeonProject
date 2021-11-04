@@ -11,8 +11,8 @@ public class Game {
 		Inventory playerInv = player.getInv();
 		playerInv.equipWeapon();
 		playerInv.equipArmor();
-		Enemy enemy1 = new Enemy(100, 100, 25, name, 18, 18);
-		Enemy enemy2 = new Enemy(100, 100, 25, name, 55, 9); 
+		Enemy enemy1 = new Enemy(10, 10, 10, name, 18, 18);
+		Enemy enemy2 = new Enemy(100, 100, 10, name, 55, 9); 
 		boolean done = false;
 		int enemymover = 0;
 
@@ -48,13 +48,14 @@ public class Game {
 			if(player.getXcord() == enemy1.getX() && player.getYcord() == enemy1.getY()) {
                                 boolean isDead = player.Battle(enemy1);
                                 if (isDead) {
-                                        Map.grid[enemy1.getX()] = Map.grid[enemy1.getX()].replace("&", " ");
+                                      	enemymover = 1000000;
+					enemy1.moveLocation(0, 15);
                                 }
                         }
                         if(player.getXcord() == enemy2.getX() && player.getYcord() == enemy2.getY()) {
                                 boolean isDead = player.Battle(enemy2);
                                 if (isDead) {
-                                        Map.grid[enemy2.getX()] = Map.grid[enemy2.getX()].replace("&", " ");
+                                        Map.grid[enemy2.getY()] = Map.grid[enemy2.getY()].replace("&", " ");
                                 }
                         }
 
