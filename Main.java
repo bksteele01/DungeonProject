@@ -2,8 +2,9 @@ import ansi_terminal.*;
 import java.util.Scanner;
 
 public class Main {
-	
-	public static void main(String[] args) {
+
+	public static void main(String[] args) {	//Main prints out the setting and plot and then calls on the Game method
+						        //which houses most of the code 
 		Terminal.rawMode();
 		Scanner input = new Scanner(System.in);
 		System.out.print("Setting: 2021 Eygypt 24 miles from the Nile River\n \r");
@@ -21,11 +22,12 @@ public class Main {
 		System.out.print("Danger could be around any corner....Good luck my friend..??\n \r");
 
 		Game.game();
-		
+
 		Terminal.cookedMode();
 	}
 }
 
-// javac -cp ".:ansi_terminal.jar" *.java  To compile with terminal 
-// java -cp ".:ansi_terminal.jar" Main   To run with teminal 
-
+/* This is just so that we could go into here and copy the compiler and runner for Terminal 
+ javac -cp ".:ansi_terminal.jar" *.java  To compile with terminal 
+ java -cp ".:ansi_terminal.jar" Main   To run with teminal 
+*/

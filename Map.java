@@ -1,6 +1,7 @@
 import ansi_terminal.*;
-public class Map{
-        public static String[] grid = {
+public class Map{ //This class holds multiple methods that have to do with the layout of the map as well as the layout of the information for the palyer
+	 
+        public static String[] grid = { //This creates the actual map/grid that prints to the screen as well as the locations of certain loot
                 "############                              ############################",
                 "#          #                              #                   ########",
                 "#          #                           ####                   #       ",
@@ -43,7 +44,10 @@ public class Map{
                 "   ###################################################################"
 		};	
 
-	public static void displayMap(int row, int column, int rowe, int columne, int rowe2, int columne2){
+//This method makes it so that if you move your player over any of the loot it prints out the name for that symbol and the information for
+//that symbol, as well as pausing for a second so the player can read the information
+	public static void displayMap(int row, int column, int rowe, int columne, int rowe2, int columne2){ 
+									
                 if(grid[row].charAt(column) == 'h'){
                         Terminal.warpCursor(10,75);
                         System.out.print("Helmet");
@@ -68,6 +72,8 @@ public class Map{
                         Terminal.pause(1);
                  }
 		Terminal.clear();
+
+//This area sets the symbols on the map red
                 for(int looprow = 0;looprow < 40;looprow++){
                         for(int loopcolumn = 0;loopcolumn < 70;loopcolumn++){
 				if(looprow == row && loopcolumn == column || looprow == rowe && loopcolumn == columne || looprow == rowe2 && loopcolumn ==                                   columne2){
@@ -111,7 +117,8 @@ public class Map{
 	}
 }
 
-        
+
+//This method prints messages to the side of the map so that the player can see the key to the symbols, as well as the possible commands available to the player
         public static void displayInfo(){
                 Terminal.setForeground(Color.RED);
                 Terminal.warpCursor(1, 72);
@@ -137,5 +144,5 @@ public class Map{
 		Terminal.warpCursor(40, 0);
                 Terminal.reset();
 		
-}
+	}
 }   
