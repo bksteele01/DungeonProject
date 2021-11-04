@@ -17,50 +17,57 @@ public class Game {
 		int enemymover = 0;
 
 		while(!done){
+			if(enemy1.getIsDead() == true && enemy2.getIsDead() == true) {
+				Terminal.warpCursor(20,75);
+				System.out.print("YOU HAVE CONQUORED ALL THE ENEMIES! VICTORY!");
+				Terminal.pause(3);
+				done = true; 
+			}
 			if(player.getCurrentHealth() < 1){
 				done = true;
 			}
 			if(12 < enemymover && enemymover < 17){
-                                enemy1.moveLocation(enemy1.getX(), enemy1.getY()+1);
+				enemy1.moveLocation(enemy1.getX(), enemy1.getY()+1);
 				enemy2.moveLocation(enemy2.getX(), enemy2.getY()+1);
-                                enemymover++;
-                                if(enemymover == 17 ){
+				enemymover++;
+				if(enemymover == 17 ){
 					enemy1.moveLocation(enemy1.getX()+1, enemy1.getY());
 					enemy2.moveLocation(enemy2.getX()+1, enemy2.getY());
 					enemymover = 0;
 				}
-                        }
+			}
 			if(8 < enemymover && enemymover < 13){
-                                enemy1.moveLocation(enemy1.getX()+1, enemy1.getY());
+				enemy1.moveLocation(enemy1.getX()+1, enemy1.getY());
 				enemy2.moveLocation(enemy2.getX()+1, enemy2.getY());
-                                enemymover++;
+				enemymover++;
 			}
 			if(4 < enemymover && enemymover < 9){
-                                enemy1.moveLocation(enemy1.getX(),enemy1.getY()-1);
+				enemy1.moveLocation(enemy1.getX(),enemy1.getY()-1);
 				enemy2.moveLocation(enemy2.getX(),enemy2.getY()-1);
-                                enemymover++;
-                        }
+				enemymover++;
+			}
 			if(enemymover < 5){
-                                enemy1.moveLocation(enemy1.getX()-1, enemy1.getY());
+				enemy1.moveLocation(enemy1.getX()-1, enemy1.getY());
 				enemy2.moveLocation(enemy2.getX()-1, enemy2.getY());				
-                                enemymover = enemymover+1;
-                        }
+				enemymover = enemymover+1;
+			}
 			if(player.getXcord() == enemy1.getX() && player.getYcord() == enemy1.getY()) {
-                                boolean isDead = player.Battle(enemy1);
-                                if (isDead) {
-                                      	
+				boolean isDead = player.Battle(enemy1);
+				if (isDead) {
+					enemy1.setIsDead();
 					enemy1.moveLocation(-15, 15);
-                                }
-                        }
-                        if(player.getXcord() == enemy2.getX() && player.getYcord() == enemy2.getY()) {
-                                boolean isDead = player.Battle(enemy2);
-                                if (isDead) {
-                                        enemy2.moveLocation(-15,16);
-                                }
-                        }
+				}
+			}
+			if(player.getXcord() == enemy2.getX() && player.getYcord() == enemy2.getY()) {
+				boolean isDead = player.Battle(enemy2);
+				if (isDead) {
+					enemy2.setIsDead();
+					enemy2.moveLocation(-15,16);
+				}
+			}		
 
 			Map.displayMap(player.getYcord(), player.getXcord(), enemy1.getY(), enemy1.getX(), enemy2.getY(), enemy2.getX());
-                        Map.displayInfo();
+			Map.displayInfo();
 			Key key = Terminal.getKey();
 			switch(key){
 				case ESCAPE:
@@ -74,26 +81,26 @@ public class Game {
 					}
 				case RIGHT:
 					if(Map.grid[player.getYcord()].charAt(player.getXcord()+1) == '#'){
-                                                break;
-                                        }else{
-                                                player.setxCord(player.getXcord() + 1);
-                                                break;
-                                        }
+						break;
+					}else{
+						player.setxCord(player.getXcord() + 1);
+						break;
+					}
 				case UP:
 					if(Map.grid[player.getYcord()-1].charAt(player.getXcord()) == '#'){
-                                                break;
-                                        }else{
-                                                player.setyCord(player.getYcord() - 1);
-                                                break;
-                                        }
+						break;
+					}else{
+						player.setyCord(player.getYcord() - 1);
+						break;
+					}
 				case DOWN:
 					if(Map.grid[player.getYcord()+1].charAt(player.getXcord()) == '#'){
-                                                break;
-                                        }else{
-                                                player.setyCord(player.getYcord() + 1);
+						break;
+					}else{
+						player.setyCord(player.getYcord() + 1);
 
-                                                break;
-                                        }
+						break;
+					}
 				case p:
 					if(player.getYcord() == 16 && player.getXcord() == 32){
 						ItemType armor = ItemType.armor;
@@ -102,23 +109,23 @@ public class Game {
 						Map.grid[16] = Map.grid[16].replace("h", " ");
 					}
 					if(player.getYcord() == 32 && player.getXcord() == 13){
-                                                ItemType weapon = ItemType.weapon;
-                                                Item ironsword = new Item(weapon, "Iron Sword", 8, 50, 15);
-                                                playerInv.add(ironsword);
-                                                Map.grid[32] = Map.grid[32].replace("s", " ");
-                                        }
+						ItemType weapon = ItemType.weapon;
+						Item ironsword = new Item(weapon, "Iron Sword", 8, 50, 15);
+						playerInv.add(ironsword);
+						Map.grid[32] = Map.grid[32].replace("s", " ");
+					}
 					if(player.getYcord() == 7 && player.getXcord() == 56){
-                                                ItemType weapon = ItemType.weapon;
-                                                Item bow = new Item(weapon, "Bow/Quiver", 3, 45, 12);
-                                                playerInv.add(bow);
-                                                Map.grid[7] = Map.grid[7].replace("b", " ");
-                                        }
+						ItemType weapon = ItemType.weapon;
+						Item bow = new Item(weapon, "Bow/Quiver", 3, 45, 12);
+						playerInv.add(bow);
+						Map.grid[7] = Map.grid[7].replace("b", " ");
+					}
 					if(player.getYcord() == 35 && player.getXcord() == 59){
-                                                ItemType armor = ItemType.armor;
-                                                Item chestplate = new Item(armor, "Bronze Chestplate", 10, 70, 15);
-                                                playerInv.add(chestplate);
-                                                Map.grid[35] = Map.grid[35].replace("c", " ");
-                                        }
+						ItemType armor = ItemType.armor;
+						Item chestplate = new Item(armor, "Bronze Chestplate", 10, 70, 15);
+						playerInv.add(chestplate);
+						Map.grid[35] = Map.grid[35].replace("c", " ");
+					}
 
 					break;
 				case q:
@@ -133,8 +140,8 @@ public class Game {
 					break;
 
 
-				
-					
+
+
 			}
 		}
 	}

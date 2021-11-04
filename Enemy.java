@@ -67,4 +67,9 @@ class Enemy {
 	public boolean getIsDead(){
 		return isDead;
 	}
+	
+	public boolean setIsDead() {
+		isDead = true;
+		return isDead;
+	}
 }
